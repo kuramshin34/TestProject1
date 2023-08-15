@@ -6,10 +6,15 @@ namespace TestProject1
         [TestMethod]
         public void RightTriangle_3_4_5_true()
         {
-            Triangle rightTriangle = new Triangle(3, 4, 5);
+            //arrange
+            double x = 3;
+            double y = 4;
+            double z = 5;
+            Triangle rightTriangle = new Triangle(x, y, z);
             Assert.IsTrue(rightTriangle.IsRightTriangle());
 
-            Triangle notRightTriangle = new Triangle(3, 4, 6);
+            z = 6;
+            Triangle notRightTriangle = new Triangle(x, y, z);
             Assert.IsFalse(notRightTriangle.IsRightTriangle());
         }
 
@@ -32,9 +37,11 @@ namespace TestProject1
             double x = 3;
             double y = 4;
             double z = 5;
-            Triangle triangle = new Triangle(x, y, z);
             double expected = 6;
+            //actian
+            Triangle triangle = new Triangle(x, y, z);
             double result = triangle.CalculateArea();
+            //assert
             Assert.AreEqual(expected, result);
         }
     }
